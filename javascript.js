@@ -1,12 +1,12 @@
 function getComputerChoice() {
-    const arr = ['Rock', 'Paper', 'Scissors'];
+    const arr = ['rock', 'paper', 'scissors'];
     let i = Math.floor(Math.random() * arr.length);
     return arr[i];
 }
 //console.log(getComputerChoice())
 function playRound(playerSelection, computerSelection) {
     const playerToLower = playerSelection.toLowerCase();
-    const computerToLower = computerSelection.toLowerCase();
+
     if (playerToLower === 'rock' && computerToLower === 'paper') {
         return 'You Lose! Paper beats Rock';
     }
@@ -42,14 +42,14 @@ function game() {
             a === 'You Lose! Paper beats Rock'
             || a === 'You Lose! Scissors beats Paper'
             || a === 'You Lose! Rock beats Scissors'
-        ) {computerScore++;}
+        ) computerScore++;
         else if (
             a === 'You Win! Rock beats Scissors'
             || a === 'You Win! Paper beats Rock'
             || a === 'You Win! Scissors beats Paper'
-        ) {playerScore++;}
+        ) playerScore++;
     }
-    if (playerScore > computerScore) {console.log("You're the Winner!")}
-    else if (computerScore > playerScore) {console.log("You're the Loser!")}
-    else {console.log("You Tied!")}
+    if (playerScore > computerScore) console.log("You're the Winner!")
+    else if (computerScore > playerScore) console.log("You're the Loser!")
+    else console.log("You Tied!")
 }
