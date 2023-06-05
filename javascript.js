@@ -7,22 +7,22 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     const playerToLower = playerSelection.toLowerCase();
 
-    if (playerToLower === 'rock' && computerToLower === 'paper') {
+    if (playerToLower === 'rock' && computerSelection === 'paper') {
         return 'You Lose! Paper beats Rock';
     }
-    else if (playerToLower === 'rock' && computerToLower === 'scissors') {
+    else if (playerToLower === 'rock' && computerSelection === 'scissors') {
         return 'You Win! Rock beats Scissors';
     }
-    else if (playerToLower === 'paper' && computerToLower === 'rock') {
+    else if (playerToLower === 'paper' && computerSelection === 'rock') {
         return 'You Win! Paper beats Rock';
     }
-    else if (playerToLower === 'paper' && computerToLower === 'scissors') {
+    else if (playerToLower === 'paper' && computerSelection === 'scissors') {
         return 'You Lose! Scissors beats Paper';
     }
-    else if (playerToLower === 'scissors' && computerToLower === 'rock') {
+    else if (playerToLower === 'scissors' && computerSelection === 'rock') {
         return 'You Lose! Rock beats Scissors';
     }
-    else if (playerToLower === 'scissors' && computerToLower === 'paper') {
+    else if (playerToLower === 'scissors' && computerSelection === 'paper') {
         return 'You Win! Scissors beats Paper';
     }
     else {
@@ -51,5 +51,5 @@ function game() {
     }
     if (playerScore > computerScore) console.log("You're the Winner!")
     else if (computerScore > playerScore) console.log("You're the Loser!")
-    else console.log("You Tied!")
+    else console.log("You both drew the game!")
 }
