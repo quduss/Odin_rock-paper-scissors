@@ -8,25 +8,25 @@ function playRound(playerSelection, computerSelection) {
     const playerToLower = playerSelection.toLowerCase();
 
     if (playerToLower === 'rock' && computerSelection === 'paper') {
-        return 'You Lose! Paper beats Rock';
+        div.textContent = 'You Lose! Paper beats Rock';
     }
     else if (playerToLower === 'rock' && computerSelection === 'scissors') {
-        return 'You Win! Rock beats Scissors';
+        div.textContent = 'You Win! Rock beats Scissors';
     }
     else if (playerToLower === 'paper' && computerSelection === 'rock') {
-        return 'You Win! Paper beats Rock';
+        div.textContent = 'You Win! Paper beats Rock';
     }
     else if (playerToLower === 'paper' && computerSelection === 'scissors') {
-        return 'You Lose! Scissors beats Paper';
+        div.textContent = 'You Lose! Scissors beats Paper';
     }
     else if (playerToLower === 'scissors' && computerSelection === 'rock') {
-        return 'You Lose! Rock beats Scissors';
+        div.textContent = 'You Lose! Rock beats Scissors';
     }
     else if (playerToLower === 'scissors' && computerSelection === 'paper') {
-        return 'You Win! Scissors beats Paper';
+        div.textContent = 'You Win! Scissors beats Paper';
     }
     else {
-        return 'You tied!';
+        div.textContent = 'You tied!';
     }
 }
 
@@ -53,3 +53,7 @@ function game() {
     else if (computerScore > playerScore) console.log("You're the Loser!")
     else console.log("You both drew the game!")
 }
+let computerSelection = getComputerChoice();
+const buttons = document.querySelectorAll('button');
+const div = document.querySelector('div');
+buttons.forEach(button => button.addEventListener('click', () => playRound(button.textContent, computerSelection)));
