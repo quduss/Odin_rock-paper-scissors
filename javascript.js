@@ -9,32 +9,38 @@ function playRound(playerSelection) {
     const playerToLower = playerSelection.toLowerCase();
 
     if (playerToLower === 'rock' && computerSelection === 'paper') {
-        div.textContent = 'You Lose! Paper beats Rock';
+        result.textContent = 'You Lose! Paper beats Rock';
         computerScore++;
-        
+        score.textContent = `${playerScore} - ${computerScore}`;
     }
     else if (playerToLower === 'rock' && computerSelection === 'scissors') {
-        div.textContent = 'You Win! Rock beats Scissors';
+        result.textContent = 'You Win! Rock beats Scissors';
         playerScore++;
+        score.textContent = `${playerScore} - ${computerScore}`;
     }
     else if (playerToLower === 'paper' && computerSelection === 'rock') {
-        div.textContent = 'You Win! Paper beats Rock';
+        result.textContent = 'You Win! Paper beats Rock';
         playerScore++;
+        score.textContent = `${playerScore} - ${computerScore}`;
     }
     else if (playerToLower === 'paper' && computerSelection === 'scissors') {
-        div.textContent = 'You Lose! Scissors beats Paper';
+        result.textContent = 'You Lose! Scissors beats Paper';
         computerScore++;
+        score.textContent = `${playerScore} - ${computerScore}`;
     }
     else if (playerToLower === 'scissors' && computerSelection === 'rock') {
-        div.textContent = 'You Lose! Rock beats Scissors';
+        result.textContent = 'You Lose! Rock beats Scissors';
         computerScore++;
+        score.textContent = `${playerScore} - ${computerScore}`;
     }
     else if (playerToLower === 'scissors' && computerSelection === 'paper') {
-        div.textContent = 'You Win! Scissors beats Paper';
+        result.textContent = 'You Win! Scissors beats Paper';
         playerScore++;
+        score.textContent = `${playerScore} - ${computerScore}`;
     }
     else {
-        div.textContent = 'You tied!';
+        result.textContent = 'You tied!';
+        score.textContent = `${playerScore} - ${computerScore}`;
     }
 }
 
@@ -42,6 +48,8 @@ function playRound(playerSelection) {
 let playerScore = 0;
 let computerScore = 0;
 const buttons = document.querySelectorAll('button');
-const div = document.querySelector('div');
+const result = document.querySelector('.result');
+const score = document.querySelector('.score');
+
    
 buttons.forEach(button => button.addEventListener('click', () => playRound(button.textContent)));
