@@ -10,32 +10,33 @@ function playRound(playerSelection) {
     winner.textContent = '';
 
 
+
     if (playerToLower === 'rock' && computerSelection === 'paper') {
         result.textContent = 'You Lose! Paper beats Rock';
         computerScore++;
         score.textContent = `You ${playerScore} - Computer ${computerScore}`;
     }
-     if (playerToLower === 'rock' && computerSelection === 'scissors') {
+    if (playerToLower === 'rock' && computerSelection === 'scissors') {
         result.textContent = 'You Win! Rock beats Scissors';
         playerScore++;
         score.textContent = `You ${playerScore} - Computer ${computerScore}`;
     }
-     if (playerToLower === 'paper' && computerSelection === 'rock') {
+    if (playerToLower === 'paper' && computerSelection === 'rock') {
         result.textContent = 'You Win! Paper beats Rock';
         playerScore++;
         score.textContent = `You ${playerScore} - Computer ${computerScore}`;
     }
-     if (playerToLower === 'paper' && computerSelection === 'scissors') {
+    if (playerToLower === 'paper' && computerSelection === 'scissors') {
         result.textContent = 'You Lose! Scissors beats Paper';
         computerScore++;
         score.textContent = `You ${playerScore} - Computer ${computerScore}`;
     }
-     if (playerToLower === 'scissors' && computerSelection === 'rock') {
+    if (playerToLower === 'scissors' && computerSelection === 'rock') {
         result.textContent = 'You Lose! Rock beats Scissors';
         computerScore++;
         score.textContent = `You ${playerScore} - Computer ${computerScore}`;
     }
-     if (playerToLower === 'scissors' && computerSelection === 'paper') {
+    if (playerToLower === 'scissors' && computerSelection === 'paper') {
         result.textContent = 'You Win! Scissors beats Paper';
         playerScore++;
         score.textContent = `You ${playerScore} - Computer ${computerScore}`;
@@ -45,12 +46,12 @@ function playRound(playerSelection) {
         score.textContent = `You ${playerScore} - Computer ${computerScore}`;
     }
     if (playerScore === 5) {
-        winner.textContent = 'You have 5 points! You won the game!'
+        winner.textContent = 'You reached 5 points! You won the game!'
         playerScore = 0;
         computerScore = 0;
     }
     if (computerScore === 5) {
-        winner.textContent = 'You lost! The Computer won but you can try again.'
+        winner.textContent = 'You lost! The Computer reached 5 points first but you can try again.'
         playerScore = 0;
         computerScore = 0;
     }
